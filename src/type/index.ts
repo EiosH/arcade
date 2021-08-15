@@ -18,3 +18,8 @@ export enum SignalType {
 
 export type SignalData = DataFormat<SignalType>;
 export type MessageData = string;
+
+export interface Data {
+  type: string;
+  data?: any;
+}

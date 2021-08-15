@@ -8,7 +8,9 @@ module.exports = {
     filename: "main.js",
     path: path.resolve(__dirname, "output"),
   },
-
+  node: {
+    __dirname: false,
+  },
   module: {
     rules: [
       {
@@ -26,6 +28,10 @@ module.exports = {
             plugins: ["@babel/plugin-transform-runtime"],
           },
         },
+      },
+      {
+        test: /\.node$/,
+        loader: "node-loader",
       },
     ],
   },
